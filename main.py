@@ -38,7 +38,10 @@ def upload_to_vercel():
         print(f"Error removing folder: {e}")
 
 
-loader = PyPDFLoader("../../Downloads/Profile.pdf")
+# NOTE: path updated to a repo-root-relative Profile.pdf.
+# Place your LinkedIn PDF export (Profile > More > Save to PDF) at the repo root as Profile.pdf,
+# or change this path to wherever you saved it.
+loader = PyPDFLoader("Profile.pdf")
 documents = loader.load()
 
 text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=50)
